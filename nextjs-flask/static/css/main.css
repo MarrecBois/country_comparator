@@ -1,5 +1,20 @@
-/* Style the top navigation bar */
-.topnav {
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+  }
+  
+  /* Style the header */
+  .header {
+    background-color: #f1f1f1;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Style the top navigation bar */
+  .topnav {
     overflow: hidden;
     background-color: #333;
   }
@@ -20,7 +35,7 @@
     color: black;
   }
   
-  /* Create two equal columns that floats next to each other */
+  /* Create three equal columns that floats next to each other */
   .column {
     float: left;
     width: 50%;
