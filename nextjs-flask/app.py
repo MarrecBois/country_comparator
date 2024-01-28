@@ -270,7 +270,7 @@ def gameon():
             else:
                 start = 1
 
-             for i in range(start, c2, 3):
+            for i in range(start, c2, 3):
                 if i == start:
                     newc2 += country2Info[:i]
                     
