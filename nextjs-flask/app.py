@@ -237,6 +237,8 @@ def gameon():
         
         if gameMode == 'Hard Mode':
             session['hardMode'] = True
+            if gameMode != 'HDI (0-1)' and gameMode != 'Life Expectancy (Years)' and gameMode != 'National Anthem Length (Minutes:Seconds)':
+                session['addCommas'] = True
             randomIndex = rn.randint(1, 14)
             session['GameModeIndex'] = randomIndex = rn.randint(1, 14)
             gameMode = gameModeList[int(session['GameModeIndex'])]
