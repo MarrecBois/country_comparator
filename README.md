@@ -9,7 +9,7 @@ The categories are the following: Population, Area (Total Area, not Landmass), P
 
 Running Instructions:
 
-Run python3 app.py in terminal. Go to http link that is provided after command is run.
+Run python3 app.py in terminal. Go to http link that is provided after the command is run.
 
 Note: Will need flask and virtual-env installed
 
