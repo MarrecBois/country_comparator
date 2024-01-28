@@ -59,7 +59,7 @@ def gameon():
                 while (countryDict[country1][int(session['GameModeIndex'])]) == 'NO': # This code will only be applicable for hard mode
                     rand1 = rn.randint(0, len(countryList)-1)
                     country1 = countryList[rand1]
-                    
+
                 session['country1'] = country1
                 session['country2'] = country2
                 session['score'] += 1
@@ -287,6 +287,10 @@ def gameover():
     if request.method == 'POST':
         return redirect('/gameon')
     return render_template('gameover.html', score = session['score'])
+
+@app.route('/tutorial', methods=['GET'])
+def tutorial():
+    return render_template('tutorial.html', score = session['score'])
 
 if __name__ == "__main__":
     app.run(port=8000, debug=True)
