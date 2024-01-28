@@ -86,3 +86,11 @@
   padding: 10px;
   text-align: center;
 }
+
+
+.lose {
+  font-size: 36px;
+  color: red;
+  font-weight: bold;
+  text-align: center;
+}
