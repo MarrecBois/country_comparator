@@ -38,7 +38,7 @@ def index():
 
 @app.route('/gameon', methods=['POST', 'GET'])
 def gameon():
-    if request.method == 'POST':
+    if request.method == 'POST':    
         if request.form.get("Guess") == "Lower":
             country1Data = countryDict[session['country1']][int(session['GameModeIndex'])]
             country2Data = countryDict[session['country2']][int(session['GameModeIndex'])]
@@ -54,6 +54,10 @@ def gameon():
                 session['country1'] = country1
                 session['country2'] = country2
                 session['score'] += 1
+                
+                if hardMode:
+                   session['GameModeIndex'] = randomIndex = rn.randint(1, 14)
+
                 gameMode = gameModeList[int(session['GameModeIndex'])]
                 country1Info = countryDict[country1][int(session['GameModeIndex'])]
                 country2Info = countryDict[country2][int(session['GameModeIndex'])]
@@ -79,6 +83,11 @@ def gameon():
                 return render_template('gameon.html', score = session['score'], country1 = country1, country2 = country2, gameMode = gameMode, country1Info=country1Info,country2Info=country2Info)
     else: 
         gameMode = gameModeList[int(session['GameModeIndex'])]
+        if gameMode == 'Hard Mode':
+            hardMode = True
+            randomIndex = rn.randint(1, 14)
+            gameMode = gameModeList[int(session['GameModeIndex'])]
+            
         session['score'] = 0
         rand1 = rn.randint(0, len(countryList)-1)
         rand2 = rn.randint(0, len(countryList)-1)

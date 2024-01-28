@@ -14,7 +14,7 @@ Order for dictionary indices:
     11 --> Average Wage
 '''
 gameModeList = [
-'Name', 'Population (# of People)', 'Land Mass (Square Kilometers)', 'GDP (Millions USD)', 'HDI (0-1)', 'Debt (USD)', 'C02 Emissions (Kiloton C02))', 'Trade Balance (Million USD)', 'Life Expectancy (Years)', 'Elevation (Meters)', 'Military Experience (Billions USD)', 'Average Wage (USD)' 
+'Name', 'Population (# of People)', 'Land Mass (Square Kilometers)', 'GDP (Millions USD)', 'HDI (0-1)', 'Debt (USD)', 'C02 Emissions (Kiloton C02))', 'Trade Balance (Million USD)', 'Life Expectancy (Years)', 'Elevation (Meters)', 'Military Experience (Billions USD)', 'Average Wage (USD)', 'National Anthem (Minutes:Seconds)', 'Penis Size (Inches)', 'Population Density (People/km^2)', 'Hard Mode' 
 ]
 countryDict = {
     'Afghanistan': ['Afghanistan', 34262840, 652864, 14939, 0.478, 1.28e9, 5675.8, -4770, 61.98, 7492, 'NO', 'NO'],
