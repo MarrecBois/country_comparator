@@ -1,3 +1,19 @@
+'''
+Order for dictionary indices:
+    0 --> country name
+    1 --> population
+    2 --> area
+    3 --> GDP
+    4 --> HDI
+    5 --> Debt
+    6 --> CO2
+    7 --> Trade Balance
+    8 --> Life Expectancy
+    9 --> Elevation
+    10 --> Military Expenditure
+    11 --> Average Wage
+'''
+
 countryDict = {
     'Afghanistan': ['Afghanistan', 34262840, 652864, 14939, 0.478, 1.28e9, 5675.8, -4770, 61.98, 7492, 'NO', 'NO'],
     'Albania': ['Albania', 2761785, 28748, 18260, 0.796, 1.4e9, 4486.2, -4089, 76.46, 2764, 'NO', 'NO'],
@@ -198,3 +214,8 @@ countryDict = {
     'Zambia': ['Zambia', 19610769, 752612, "NO", "NO", "NO", "NO", "NO", "NO", "NO", "NO", "NO"],
     'Zimbabwe': ['Zimbabwe', 15178979, 390757, "NO", "NO", "NO", "NO", "NO", "NO", "NO", "NO", "NO"]
 }
+
+countryList = []
+
+for key in countryDict:
+    countryList.append(key)
