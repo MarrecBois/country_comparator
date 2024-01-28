@@ -207,5 +207,9 @@ def gameover():
         return redirect('/gameon')
     return render_template('gameover.html', score = session['score'])
 
+@app.route('/tutorial', methods=['GET'])
+def tutorial():
+    return render_template('tutorial.html', score = session['score'])
+
 if __name__ == "__main__":
     app.run(port=8000, debug=True)
