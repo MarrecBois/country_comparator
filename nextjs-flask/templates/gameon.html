@@ -7,19 +7,24 @@
 {% block body %}
 
   <div class="row">
-    <header class="header"> <h1> Score: {{score}}</h1></header>
+    <header class="header"> <h1> {{gameMode}}</h1> <h1> Score: {{score}}</h1></header>
     <div class="column2">
-          <h2>Country 1</h2>
+          <h2>{{country1}}</h2>
+          <p>{{country1Info}}</p>
     </div>
 
     <div class="column2">
-      <h2>Country 2</h2>
+      <h2>{{country2}}</h2>
     </div>
   </div>
-  <form action="/gameon" method="post"></form>
+  <form action="/gameon" method="post">
+    <input type="hidden" name="Guess" value="Higher"></input>
   <h2><button type="submit">Higher</button></h2>
-    <h2><button type="submit">Lower</button></h2>
 </form>
+<form action="/gameon" method="post">
+  <input type="hidden" name="Guess" value="Lower"></input>
+    <h2><button type="submit">Lower</button></h2>
+  </form>
 
   <div class="footer">
     <h2><a class="nav-link" style="text-decoration: none" href="/">Change Game Mode</a></h2>

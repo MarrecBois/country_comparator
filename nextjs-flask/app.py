@@ -4,7 +4,7 @@ from flask import Flask, flash, redirect, render_template, request, session
 from flask_session import Session
 from tempfile import mkdtemp
 from werkzeug.security import check_password_hash, generate_password_hash
-import countriesDict
+from countriesDict import *
 from datetime import datetime
 import random as rn
 
@@ -31,6 +31,7 @@ def __repr__(self):
 @app.route('/', methods=['POST', 'GET'])
 def index():
     if request.method == 'POST':
+        session['GameModeIndex'] = request.form.get('gameModeIndex')
         return redirect('/gameon')
     else:
         return render_template('index.html')
@@ -38,16 +39,22 @@ def index():
 @app.route('/gameon', methods=['POST', 'GET'])
 def gameon():
     if request.method == 'POST':
-        session['score'] += 1
+        if request.form.get("Guess") == "Lower":
+            session['score'] += 1
         return render_template('gameon.html', score = session['score'])
     else: 
-        #session['score'] = 0
-        #rand1 = rn.randint(0, len(countryDict))
-        #rand2 = rn.randint(0, len(countryDict))
-        #while rand1 == rand2:
-            #rand2 = rn.randint(0, len(countryDict))
-        #session[]
-        return render_template('gameon.html', score = 0) #country1 = country_list[rand1], country2 = country_list[rand2]
+        gameMode = gameModeList[int(session['GameModeIndex'])]
+        session['score'] = 0
+        rand1 = rn.randint(0, len(countryList)-1)
+        rand2 = rn.randint(0, len(countryList)-1)
+        while rand1 == rand2:
+            rand2 = rn.randint(0, len(countryDict))
+        country1 = countryList[rand1]
+        country2 = countryList[rand2]
+        session['country1'] = country1
+        session['country2'] = country2
+        country1Info = countryDict[country1][int(session['GameModeIndex'])]
+        return render_template('gameon.html', score = 0, country1 = country1, country2 = country2, gameMode = gameMode, country1Info=country1Info) 
 
 @app.route('/gameover', methods=['POST', 'GET'])
 def gameover():
