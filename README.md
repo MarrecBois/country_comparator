@@ -7,6 +7,12 @@ Data was taken from Wikipedia for 198 Countries, in addition to the World Total.
 The categories are the following: Population, Area (Total Area, not Landmass), Population Density, GDP (Nominal), HDI (Human Development Index), External Debt, CO2 Emissions per Year, Trade Balance (Value of Exports - Imports), Life Expectancy, Elevation (Highest Point, not Average), Military Expenditures (When Applicable, ~40 Countries), Average Wage (When Applicable, ~40 Countries), and Duration of National Anthem.
 
 
+Running Instructions:
+
+Run python3 app.py in terminal. Go to http link that is provided after the command is run.
+
+Note: Will need flask and virtual-env installed
+
 
 In the coding process, we used a mixture of html, css, and python with flask. 
 
