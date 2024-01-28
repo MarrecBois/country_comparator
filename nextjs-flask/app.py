@@ -59,7 +59,7 @@ def gameon():
                 while (countryDict[country1][int(session['GameModeIndex'])]) == 'NO': # This code will only be applicable for hard mode
                     rand1 = rn.randint(0, len(countryList)-1)
                     country1 = countryList[rand1]
-                    
+
                 session['country1'] = country1
                 session['country2'] = country2
                 session['score'] += 1
