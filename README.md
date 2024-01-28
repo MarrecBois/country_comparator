@@ -1,8 +1,6 @@
-Planet Profiler
-Country Comparator
-World Trends
+Country Comparator!
 
-We constructed an gaming app that relates countries' data to one another. The premise of the app is that the user will guess whether one country's data point is higher than another countries for a variety of categories. 
+We constructed an game that relates countries' data to one another. The premise of the game is that the user will guess whether one country's data point is higher than another countries for a variety of categories. 
 
 Data was taken from Wikipedia for 198 Countries, in addition to the World Total. Some categories had limited information on countries.
 
