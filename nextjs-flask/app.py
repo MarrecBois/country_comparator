@@ -68,8 +68,13 @@ def gameon():
                 country2Info = countryDict[country2][int(session['GameModeIndex'])]
 
                 if session['Anthem']:
-                    country1Info = str(country1Info)[0] + ':' + str(country1Info)[1:]
-                    country2Info = str(country2Info)[0] + ':' + str(country2Info)[1:]
+                    if len(str(country1Info)) == 3:
+                        country1Info = str(country1Info)[0] + ':' + str(country1Info)[1:]
+                        country2Info = str(country2Info)[0] + ':' + str(country2Info)[1:]
+                    
+                    else:
+                        country1Info = '0:' + str(country1Info)
+                        country2Info = '0:' + str(country2Info)
                 
                 elif session['Debt']:
                     country1Info = round(country1Info)
@@ -78,10 +83,10 @@ def gameon():
                     newc2Info = str(country2Info)[-3:]
 
                     for pos in range(1, len(str(country1Info))//3):
-                        newc1Info = str(country1Info)[len(country1Info - 3*pos):len(country1Info - 3*pos) + 3] + ',' + newc1Info
-                    
+                        newc1Info = str(country1Info)[len(str(country1Info)) - 3*pos:len(str(country1Info)) - 3*pos + 3] + ',' + newc1Info
+            
                     for pos in range(1, len(str(country2Info))//3):
-                        newc2Info = str(country2Info)[len(country2Info - 3*pos):len(country2Info - 3*pos) + 3] + ',' + newc2Info
+                        newc2Info = str(country2Info)[len(str(country2Info)) - 3*pos:len(str(country2Info)) - 3*pos + 3] + ',' + newc2Info
                     
                     country1Info = newc1Info
                     country2Info = newc2Info
@@ -117,8 +122,13 @@ def gameon():
                 country2Info = countryDict[country2][int(session['GameModeIndex'])]
 
                 if session['Anthem']:
-                    country1Info = str(country1Info)[0] + ':' + str(country1Info)[1:]
-                    country2Info = str(country2Info)[0] + ':' + str(country2Info)[1:]
+                    if len(str(country1Info)) == 3:
+                        country1Info = str(country1Info)[0] + ':' + str(country1Info)[1:]
+                        country2Info = str(country2Info)[0] + ':' + str(country2Info)[1:]
+                    
+                    else:
+                        country1Info = '0:' + str(country1Info)
+                        country2Info = '0:' + str(country2Info)
                 
                 elif session['Debt']:
                     country1Info = round(country1Info)
@@ -127,10 +137,10 @@ def gameon():
                     newc2Info = str(country2Info)[-3:]
 
                     for pos in range(1, len(str(country1Info))//3):
-                        newc1Info = str(country1Info)[len(country1Info - 3*pos):len(country1Info - 3*pos) + 3] + ',' + newc1Info
-                    
+                        newc1Info = str(country1Info)[len(str(country1Info)) - 3*pos:len(str(country1Info)) - 3*pos + 3] + ',' + newc1Info
+            
                     for pos in range(1, len(str(country2Info))//3):
-                        newc2Info = str(country2Info)[len(country2Info - 3*pos):len(country2Info - 3*pos) + 3] + ',' + newc2Info
+                        newc2Info = str(country2Info)[len(str(country2Info)) - 3*pos:len(str(country2Info)) - 3*pos + 3] + ',' + newc2Info
                     
                     country1Info = newc1Info
                     country2Info = newc2Info
@@ -181,8 +191,13 @@ def gameon():
             country2Info = countryDict[country2][int(session['GameModeIndex'])]
 
         if session['Anthem']:
-            country1Info = str(country1Info)[0] + ':' + str(country1Info)[1:]
-            country2Info = str(country2Info)[0] + ':' + str(country2Info)[1:]
+            if len(str(country1Info)) == 3:
+                country1Info = str(country1Info)[0] + ':' + str(country1Info)[1:]
+                country2Info = str(country2Info)[0] + ':' + str(country2Info)[1:]
+            
+            else:
+                country1Info = '0:' + str(country1Info)
+                country2Info = '0:' + str(country2Info)
 
         elif session['Debt']:
             country1Info = round(country1Info)
@@ -191,10 +206,10 @@ def gameon():
             newc2Info = str(country2Info)[-3:]
 
             for pos in range(1, len(str(country1Info))//3):
-                newc1Info = str(country1Info)[len(country1Info - 3*pos):len(country1Info - 3*pos) + 3] + ',' + newc1Info
+                newc1Info = str(country1Info)[len(str(country1Info)) - 3*pos:len(str(country1Info)) - 3*pos + 3] + ',' + newc1Info
             
             for pos in range(1, len(str(country2Info))//3):
-                newc2Info = str(country2Info)[len(country2Info - 3*pos):len(country2Info - 3*pos) + 3] + ',' + newc2Info
+                newc2Info = str(country2Info)[len(str(country2Info)) - 3*pos:len(str(country2Info)) - 3*pos + 3] + ',' + newc2Info
             
             country1Info = newc1Info
             country2Info = newc2Info
