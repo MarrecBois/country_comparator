@@ -21,7 +21,7 @@ gameModeList = [
 ]
 
 endGameMessage = [
-    'Fun fact! The average jellyfish will score higher than you just did', "You know geography isn't meant for everyone. Maybe you could work on another hobby more you're speed...like macaconi art or silent breathing", "That's a crazy high score... almost as good as when my 3 year old niece played", "Nice job, you got 3! Some would say thats adequete...they'd be wrong",""
+    'Fun fact! The average jellyfish will score higher than you just did', "You know geography isn't meant for everyone. Maybe you could work on another hobby more you're speed...like macaconi art or silent breathing", "That's a crazy high score... almost as good as when my 3 year old niece played", "Nice job, you got 3! Some would say thats adequete...they'd be wrong","Wisdom is chasing you...but you're faster", "You're geography talent are slightly below average...but its all about how you use it", "You're navigating the world like a penguin in the Sahara: cute but totally lost.", "Okay now we're getting someone...not anywhere important but somewhere for sure"
 ]
 
 countryDict = {

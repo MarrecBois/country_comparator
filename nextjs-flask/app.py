@@ -340,7 +340,7 @@ def gameover():
     if request.method == 'POST':
         return redirect('/gameon')
     if session['score'] > len(endGameMessage)-1:
-        message = 'Great job...nerd'
+        message = "I would tell you to touch grass but maybe start with just seeing sunlight first"
     else:
         message=endGameMessage[session['score']]
     return render_template('gameover.html', message=message, score=session['score'], highscore=session['highscore'])
