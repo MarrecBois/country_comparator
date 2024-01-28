@@ -8,6 +8,7 @@ from countriesDict import *
 from datetime import datetime
 import random as rn
 
+
 #for key in countryDict:
     #print(key, countryDict[key])
 
@@ -32,6 +33,7 @@ def __repr__(self):
 def index():
     if request.method == 'POST':
         session['GameModeIndex'] = request.form.get('gameModeIndex')
+        session['highscore'] = 0
         return redirect('/gameon')
     else:
         return render_template('index.html')
@@ -63,6 +65,11 @@ def gameon():
                 session['country1'] = country1
                 session['country2'] = country2
                 session['score'] += 1
+
+                if session['score'] >= session['highscore']:
+                    session['highscore'] = session['score']
+
+
                 gameMode = gameModeList[int(session['GameModeIndex'])]
                 country1Info = countryDict[country1][int(session['GameModeIndex'])]
                 country2Info = countryDict[country2][int(session['GameModeIndex'])]
@@ -156,6 +163,10 @@ def gameon():
                 session['country1'] = country1
                 session['country2'] = country2
                 session['score'] += 1
+
+                if session['score'] >= session['highscore']:
+                    session['highscore'] = session['score']
+
                 gameMode = gameModeList[int(session['GameModeIndex'])]
                 country1Info = countryDict[country1][int(session['GameModeIndex'])]
                 country2Info = countryDict[country2][int(session['GameModeIndex'])]
@@ -342,7 +353,7 @@ def gameover():
         message = 'Great job...nerd'
     else:
         message=endGameMessage[session['score']]
-    return render_template('gameover.html', message=message, score=session['score'])
+    return render_template('gameover.html', message=message, score=session['score'], highscore=session['highscore'])
 
 @app.route('/tutorial', methods=['GET'])
 def tutorial():
