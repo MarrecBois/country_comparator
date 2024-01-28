@@ -75,21 +75,43 @@ def gameon():
                     else:
                         country1Info = '0:' + str(country1Info)
                         country2Info = '0:' + str(country2Info)
-                
+                        
                 elif session['Debt']:
-                    country1Info = round(country1Info)
-                    country2Info = round(country2Info)
-                    newc1Info = str(country1Info)[-3:]
-                    newc2Info = str(country2Info)[-3:]
-
-                    for pos in range(1, len(str(country1Info))//3):
-                        newc1Info = str(country1Info)[len(str(country1Info)) - 3*pos:len(str(country1Info)) - 3*pos + 3] + ',' + newc1Info
-            
-                    for pos in range(1, len(str(country2Info))//3):
-                        newc2Info = str(country2Info)[len(str(country2Info)) - 3*pos:len(str(country2Info)) - 3*pos + 3] + ',' + newc2Info
+                    country1Info = str(round(country1Info))
+                    country2Info = str(round(country2Info))
+                    c1 = len(country1Info)
+                    c2 = len(country2Info)
+                    newc1 = ''
+                    newc2 = ''
                     
-                    country1Info = newc1Info
-                    country2Info = newc2Info
+                    if c1 % 3 == 0:
+                        start = 3
+                    elif c1 % 3 == 2:
+                        start = 2
+                    else: c1 % 3 == 1:
+                        start = 1
+
+                    for i in range(start, c1, 3):
+                        if i == start:
+                            newc1 += country1Info[:start]
+                        else:
+                            newc1 = newc1 + ',' + country1Info[i : i + 3]
+
+                    if c2 % 3 == 0:
+                        start = 3
+                    elif c2 % 3 == 2:
+                        start = 2
+                    else: c2 % 3 == 1:
+                        start = 1
+
+                    for i in range(start, c2, 3):
+                        if i == start:
+                            newc2 += country2Info[:start]
+                        else:
+                            newc2 = newc2 + ',' + country2Info[i : i + 3]
+                    
+                    country1Info = newc1
+                    country2Info = newc2
 
 
                 return render_template('gameon.html', score = session['score'], country1 = country1, country2 = country2, gameMode = gameMode, country1Info=country1Info,country2Info=country2Info)
@@ -131,19 +153,41 @@ def gameon():
                         country2Info = '0:' + str(country2Info)
                 
                 elif session['Debt']:
-                    country1Info = round(country1Info)
-                    country2Info = round(country2Info)
-                    newc1Info = str(country1Info)[-3:]
-                    newc2Info = str(country2Info)[-3:]
-
-                    for pos in range(1, len(str(country1Info))//3):
-                        newc1Info = str(country1Info)[len(str(country1Info)) - 3*pos:len(str(country1Info)) - 3*pos + 3] + ',' + newc1Info
-            
-                    for pos in range(1, len(str(country2Info))//3):
-                        newc2Info = str(country2Info)[len(str(country2Info)) - 3*pos:len(str(country2Info)) - 3*pos + 3] + ',' + newc2Info
+                    country1Info = str(round(country1Info))
+                    country2Info = str(round(country2Info))
+                    c1 = len(country1Info)
+                    c2 = len(country2Info)
+                    newc1 = ''
+                    newc2 = ''
                     
-                    country1Info = newc1Info
-                    country2Info = newc2Info
+                    if c1 % 3 == 0:
+                        start = 3
+                    elif c1 % 3 == 2:
+                        start = 2
+                    else: c1 % 3 == 1:
+                        start = 1
+
+                    for i in range(start, c1, 3):
+                        if i == start:
+                            newc1 += country1Info[:start]
+                        else:
+                            newc1 = newc1 + ',' + country1Info[i : i + 3]
+
+                    if c2 % 3 == 0:
+                        start = 3
+                    elif c2 % 3 == 2:
+                        start = 2
+                    else: c2 % 3 == 1:
+                        start = 1
+
+                    for i in range(start, c2, 3):
+                        if i == start:
+                            newc2 += country2Info[:start]
+                        else:
+                            newc2 = newc2 + ',' + country2Info[i : i + 3]
+                    
+                    country1Info = newc1
+                    country2Info = newc2
 
                 return render_template('gameon.html', score = session['score'], country1 = country1, country2 = country2, gameMode = gameMode, country1Info=country1Info,country2Info=country2Info)
     else: 
@@ -200,19 +244,41 @@ def gameon():
                 country2Info = '0:' + str(country2Info)
 
         elif session['Debt']:
-            country1Info = round(country1Info)
-            country2Info = round(country2Info)
-            newc1Info = str(country1Info)[-3:]
-            newc2Info = str(country2Info)[-3:]
+            country1Info = str(round(country1Info))
+            country2Info = str(round(country2Info))
+            c1 = len(country1Info)
+            c2 = len(country2Info)
+            newc1 = ''
+            newc2 = ''
+            
+            if c1 % 3 == 0:
+                start = 3
+            elif c1 % 3 == 2:
+                start = 2
+            else: c1 % 3 == 1:
+                start = 1
 
-            for pos in range(1, len(str(country1Info))//3):
-                newc1Info = str(country1Info)[len(str(country1Info)) - 3*pos:len(str(country1Info)) - 3*pos + 3] + ',' + newc1Info
+            for i in range(start, c1, 3):
+                if i == start:
+                    newc1 += country1Info[:start]
+                else:
+                    newc1 = newc1 + ',' + country1Info[i : i + 3]
+
+            if c2 % 3 == 0:
+                start = 3
+            elif c2 % 3 == 2:
+                start = 2
+            else: c2 % 3 == 1:
+                start = 1
+
+            for i in range(start, c2, 3):
+                if i == start:
+                    newc2 += country2Info[:start]
+                else:
+                    newc2 = newc2 + ',' + country2Info[i : i + 3]
             
-            for pos in range(1, len(str(country2Info))//3):
-                newc2Info = str(country2Info)[len(str(country2Info)) - 3*pos:len(str(country2Info)) - 3*pos + 3] + ',' + newc2Info
-            
-            country1Info = newc1Info
-            country2Info = newc2Info
+            country1Info = newc1
+            country2Info = newc2
 
         return render_template('gameon.html', score = 0, country1 = country1, country2 = country2, gameMode = gameMode, country1Info=country1Info, country2Info=country2Info) 
 
