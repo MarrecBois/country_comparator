@@ -1,6 +1,4 @@
-Planet Profiler
-Country Comparator
-World Trends
+Country Comparator!
 
 We constructed an game that relates countries' data to one another. The premise of the game is that the user will guess whether one country's data point is higher than another countries for a variety of categories. 
 
