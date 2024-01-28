@@ -45,7 +45,7 @@ def gameon():
 def gameover():
     if request.method == 'POST':
         return redirect('/gameon')
-    return render_template('gameover.html')
+    return render_template('gameover.html', score = session['score'])
 
 if __name__ == "__main__":
     app.run(port=8000, debug=True)

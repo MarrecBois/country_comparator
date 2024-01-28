@@ -10,9 +10,7 @@
     <header class="header"> <h1> Score: {{score}}</h1></header>
     <div class="column2">
         <form action="/gameon" method="post">
-          <input type="hidden" name="score" id="score" value="1"></input>
           <h2><button type="submit">Country 1</a></h2>
-
     </div>
 
     <div class="column2">
@@ -20,8 +18,10 @@
     </div>
   </div>
 </form>
+
   <div class="footer">
     <h2><a class="nav-link" style="text-decoration: none" href="/">Change Game Mode</a></h2>
+    <h2><a class="nav-link" style="text-decoration: none" href="/gameover">End Game</a></h2>
   </div>
   
 {% endblock %}
