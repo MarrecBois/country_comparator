@@ -93,9 +93,9 @@ def gameon():
 
                     for i in range(start, c1, 3):
                         if i == start:
-                            newc1 += country1Info[:start]
-                        else:
-                            newc1 = newc1 + ',' + country1Info[i : i + 3]
+                            newc1 += country1Info[:i]
+
+                        newc1 = newc1 + ',' + country1Info[i : i + 3]
 
                     if c2 % 3 == 0:
                         start = 3
@@ -106,13 +106,12 @@ def gameon():
 
                     for i in range(start, c2, 3):
                         if i == start:
-                            newc2 += country2Info[:start]
-                        else:
-                            newc2 = newc2 + ',' + country2Info[i : i + 3]
+                            newc2 += country2Info[:i]
+                            
+                        newc2 = newc2 + ',' + country2Info[i : i + 3]
                     
                     country1Info = newc1
                     country2Info = newc2
-
 
                 return render_template('gameon.html', score = session['score'], country1 = country1, country2 = country2, gameMode = gameMode, country1Info=country1Info,country2Info=country2Info)
         else:
@@ -169,9 +168,9 @@ def gameon():
 
                     for i in range(start, c1, 3):
                         if i == start:
-                            newc1 += country1Info[:start]
-                        else:
-                            newc1 = newc1 + ',' + country1Info[i : i + 3]
+                            newc1 += country1Info[:i]
+
+                        newc1 = newc1 + ',' + country1Info[i : i + 3]
 
                     if c2 % 3 == 0:
                         start = 3
@@ -182,9 +181,9 @@ def gameon():
 
                     for i in range(start, c2, 3):
                         if i == start:
-                            newc2 += country2Info[:start]
-                        else:
-                            newc2 = newc2 + ',' + country2Info[i : i + 3]
+                            newc2 += country2Info[:i]
+                            
+                        newc2 = newc2 + ',' + country2Info[i : i + 3]
                     
                     country1Info = newc1
                     country2Info = newc2
@@ -260,9 +259,9 @@ def gameon():
 
             for i in range(start, c1, 3):
                 if i == start:
-                    newc1 += country1Info[:start]
-                else:
-                    newc1 = newc1 + ',' + country1Info[i : i + 3]
+                    newc1 += country1Info[:i]
+
+                newc1 = newc1 + ',' + country1Info[i : i + 3]
 
             if c2 % 3 == 0:
                 start = 3
@@ -271,11 +270,11 @@ def gameon():
             else:
                 start = 1
 
-            for i in range(start, c2, 3):
+             for i in range(start, c2, 3):
                 if i == start:
-                    newc2 += country2Info[:start]
-                else:
-                    newc2 = newc2 + ',' + country2Info[i : i + 3]
+                    newc2 += country2Info[:i]
+                    
+                newc2 = newc2 + ',' + country2Info[i : i + 3]
             
             country1Info = newc1
             country2Info = newc2
