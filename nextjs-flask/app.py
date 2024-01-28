@@ -246,7 +246,7 @@ def gameon():
         elif gameMode == 'National Anthem Length (Minutes:Seconds)':
             session['Anthem'] = True
 
-        elif gameMode != 'HDI (0-1)' and gameMode != 'Life Expectancy (Years)':
+        elif gameMode != 'Penis Size (Centimeters)' and gameMode != 'HDI (0-1)' and gameMode != 'Life Expectancy (Years)':
             session['addCommas'] = True
 
         session['score'] = 0
