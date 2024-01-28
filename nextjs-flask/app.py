@@ -76,7 +76,7 @@ def gameon():
                         country1Info = '0:' + str(country1Info)
                         country2Info = '0:' + str(country2Info)
                         
-                elif session['Debt']:
+                elif session['addCommas']:
                     country1Info = str(round(country1Info))
                     country2Info = str(round(country2Info))
                     c1 = len(country1Info)
@@ -151,7 +151,7 @@ def gameon():
                         country1Info = '0:' + str(country1Info)
                         country2Info = '0:' + str(country2Info)
                 
-                elif session['Debt']:
+                elif session['addCommas']:
                     country1Info = str(round(country1Info))
                     country2Info = str(round(country2Info))
                     c1 = len(country1Info)
@@ -193,7 +193,7 @@ def gameon():
 
         session['hardMode'] = False
         session['Anthem'] = False
-        session['Debt'] = False
+        session['addCommas'] = False
         gameMode = gameModeList[int(session['GameModeIndex'])]
         
         if gameMode == 'Hard Mode':
@@ -205,8 +205,8 @@ def gameon():
         elif gameMode == 'National Anthem Length (Minutes:Seconds)':
             session['Anthem'] = True
 
-        elif gameMode == 'Debt (USD)':
-            session['Debt'] = True
+        elif gameMode != 'HDI (0-1)' and gameMode != 'Life Expectancy (Years)':
+            session['addCommas'] = True
 
         session['score'] = 0
         rand1 = rn.randint(0, len(countryList)-1)
@@ -242,7 +242,7 @@ def gameon():
                 country1Info = '0:' + str(country1Info)
                 country2Info = '0:' + str(country2Info)
 
-        elif session['Debt']:
+        elif session['addCommas']:
             country1Info = str(round(country1Info))
             country2Info = str(round(country2Info))
             c1 = len(country1Info)
