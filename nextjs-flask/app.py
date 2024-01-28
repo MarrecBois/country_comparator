@@ -286,11 +286,12 @@ def gameon():
 def gameover():
     if request.method == 'POST':
         return redirect('/gameon')
-    return render_template('gameover.html', score = session['score'])
+    message=endGameMessage[session['score']]
+    return render_template('gameover.html', message=message, score=session['score'])
 
 @app.route('/tutorial', methods=['GET'])
 def tutorial():
-    return render_template('tutorial.html', score = session['score'])
+    return render_template('tutorial.html')
 
 if __name__ == "__main__":
     app.run(port=8000, debug=True)
