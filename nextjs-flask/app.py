@@ -84,12 +84,20 @@ def gameon():
                     newc1 = ''
                     newc2 = ''
                     
-                    if c1 % 3 == 0:
-                        start = 3
-                    elif c1 % 3 == 2:
-                        start = 2
+                    if country1Info[0] == '-':
+                        if c1 % 3 == 0:
+                            start = 4
+                        elif c1 % 3 == 2:
+                            start = 3
+                        else:
+                            start = 2
                     else:
-                        start = 1
+                        if c1 % 3 == 0:
+                            start = 3
+                        elif c1 % 3 == 2:
+                            start = 2
+                        else:
+                            start = 1
 
                     for i in range(start, c1, 3):
                         if i == start:
@@ -97,12 +105,20 @@ def gameon():
 
                         newc1 = newc1 + ',' + country1Info[i : i + 3]
 
-                    if c2 % 3 == 0:
-                        start = 3
-                    elif c2 % 3 == 2:
-                        start = 2
+                    if country2Info[0] == '-':
+                        if c2 % 3 == 0:
+                            start = 4
+                        elif c2 % 3 == 2:
+                            start = 3
+                        else:
+                            start = 2
                     else:
-                        start = 1
+                        if c2 % 3 == 0:
+                            start = 3
+                        elif c2 % 3 == 2:
+                            start = 2
+                        else:
+                            start = 1
 
                     for i in range(start, c2, 3):
                         if i == start:
@@ -159,12 +175,20 @@ def gameon():
                     newc1 = ''
                     newc2 = ''
                     
-                    if c1 % 3 == 0:
-                        start = 3
-                    elif c1 % 3 == 2:
-                        start = 2
+                    if country1Info[0] == '-':
+                        if c1 % 3 == 0:
+                            start = 4
+                        elif c1 % 3 == 2:
+                            start = 3
+                        else:
+                            start = 2
                     else:
-                        start = 1
+                        if c1 % 3 == 0:
+                            start = 3
+                        elif c1 % 3 == 2:
+                            start = 2
+                        else:
+                            start = 1
 
                     for i in range(start, c1, 3):
                         if i == start:
@@ -172,12 +196,20 @@ def gameon():
 
                         newc1 = newc1 + ',' + country1Info[i : i + 3]
 
-                    if c2 % 3 == 0:
-                        start = 3
-                    elif c2 % 3 == 2:
-                        start = 2
+                    if country2Info[0] == '-':
+                        if c2 % 3 == 0:
+                            start = 4
+                        elif c2 % 3 == 2:
+                            start = 3
+                        else:
+                            start = 2
                     else:
-                        start = 1
+                        if c2 % 3 == 0:
+                            start = 3
+                        elif c2 % 3 == 2:
+                            start = 2
+                        else:
+                            start = 1
 
                     for i in range(start, c2, 3):
                         if i == start:
@@ -249,13 +281,20 @@ def gameon():
             c2 = len(country2Info)
             newc1 = ''
             newc2 = ''
-            
-            if c1 % 3 == 0:
-                start = 3
-            elif c1 % 3 == 2:
-                start = 2
+            if country1Info[0] == '-':
+                if c1 % 3 == 0:
+                    start = 4
+                elif c1 % 3 == 2:
+                    start = 3
+                else:
+                    start = 2
             else:
-                start = 1
+                if c1 % 3 == 0:
+                    start = 3
+                elif c1 % 3 == 2:
+                    start = 2
+                else:
+                    start = 1
 
             for i in range(start, c1, 3):
                 if i == start:
@@ -263,12 +302,20 @@ def gameon():
 
                 newc1 = newc1 + ',' + country1Info[i : i + 3]
 
-            if c2 % 3 == 0:
-                start = 3
-            elif c2 % 3 == 2:
-                start = 2
+            if country2Info[0] == '-':
+                if c2 % 3 == 0:
+                    start = 4
+                elif c2 % 3 == 2:
+                    start = 3
+                else:
+                    start = 2
             else:
-                start = 1
+                if c2 % 3 == 0:
+                    start = 3
+                elif c2 % 3 == 2:
+                    start = 2
+                else:
+                    start = 1
 
             for i in range(start, c2, 3):
                 if i == start:
