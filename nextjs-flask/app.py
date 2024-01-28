@@ -88,7 +88,7 @@ def gameon():
                         start = 3
                     elif c1 % 3 == 2:
                         start = 2
-                    else: c1 % 3 == 1:
+                    else:
                         start = 1
 
                     for i in range(start, c1, 3):
@@ -101,7 +101,7 @@ def gameon():
                         start = 3
                     elif c2 % 3 == 2:
                         start = 2
-                    else: c2 % 3 == 1:
+                    else:
                         start = 1
 
                     for i in range(start, c2, 3):
@@ -164,7 +164,7 @@ def gameon():
                         start = 3
                     elif c1 % 3 == 2:
                         start = 2
-                    else: c1 % 3 == 1:
+                    else:
                         start = 1
 
                     for i in range(start, c1, 3):
@@ -177,7 +177,7 @@ def gameon():
                         start = 3
                     elif c2 % 3 == 2:
                         start = 2
-                    else: c2 % 3 == 1:
+                    else:
                         start = 1
 
                     for i in range(start, c2, 3):
@@ -255,7 +255,7 @@ def gameon():
                 start = 3
             elif c1 % 3 == 2:
                 start = 2
-            else: c1 % 3 == 1:
+            else:
                 start = 1
 
             for i in range(start, c1, 3):
@@ -268,7 +268,7 @@ def gameon():
                 start = 3
             elif c2 % 3 == 2:
                 start = 2
-            else: c2 % 3 == 1:
+            else:
                 start = 1
 
             for i in range(start, c2, 3):
