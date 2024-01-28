@@ -4,12 +4,12 @@ from flask import Flask, flash, redirect, render_template, request, session
 from flask_session import Session
 from tempfile import mkdtemp
 from werkzeug.security import check_password_hash, generate_password_hash
-import countriesDict.py
+import countriesDict
 from datetime import datetime
 import random as rn
 
-for key in countryDict:
-    print(key, countryDict[key])
+#for key in countryDict:
+    #print(key, countryDict[key])
 
 app = Flask(__name__)
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
@@ -41,8 +41,14 @@ def gameon():
         session['score'] += 1
         return render_template('gameon.html', score = session['score'])
     else: 
-        session['score'] = 0
-        return render_template('gameon.html', score = 0)
+        #session['score'] = 0
+        #rand1 = rn.randint(0, len(countryDict))
+        #rand2 = rn.randint(0, len(countryDict))
+        #while rand1 == rand2:
+            #rand2 = rn.randint(0, len(countryDict))
+        #session[]
+        return render_template('gameon.html', score = 0) #country1 = country_list[rand1], country2 = country_list[rand2]
+
 @app.route('/gameover', methods=['POST', 'GET'])
 def gameover():
     if request.method == 'POST':
