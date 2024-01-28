@@ -17,7 +17,7 @@ Order for dictionary indices:
 gameModeList = [
 'Name', 'Population (# of People)', 'Land Mass (Square Kilometers)', 'GDP (Millions USD)', 'HDI (0-1)', 'Debt (USD)', 'C02 Emissions (Kiloton C02 Per Year)', 
 'Trade Balance (Million USD)', 'Life Expectancy (Years)', 'Elevation (Meters)', 'Military Expenditure (Billions USD)', 'Average Wage (USD)', 
-'National Anthem Length (Minutes:Seconds)', 'Penis Size (Inches)', 'Population Density (People/km^2)', 'Hard Mode' 
+'National Anthem Length (Minutes:Seconds)', 'Penis Size (Centimeters)', 'Population Density (People/km^2)', 'Hard Mode' 
 ]
 
 endGameMessage = [
