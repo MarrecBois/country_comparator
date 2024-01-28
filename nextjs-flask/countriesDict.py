@@ -12,9 +12,12 @@ Order for dictionary indices:
     9 --> Elevation
     10 --> Military Expenditure
     11 --> Average Wage
+    12 --> National Anthem Length (Minutes:Seconds) --> Originall was 'National Anthem (Minutes:Seconds)' if something went wrong
 '''
 gameModeList = [
-'Name', 'Population (# of People)', 'Land Mass (Square Kilometers)', 'GDP (Millions USD)', 'HDI (0-1)', 'Debt (USD)', 'C02 Emissions (Kiloton C02))', 'Trade Balance (Million USD)', 'Life Expectancy (Years)', 'Elevation (Meters)', 'Military Expenditure (Billions USD)', 'Average Wage (USD)', 'National Anthem (Minutes:Seconds)', 'Penis Size (Inches)', 'Population Density (People/km^2)', 'Hard Mode' 
+'Name', 'Population (# of People)', 'Land Mass (Square Kilometers)', 'GDP (Millions USD)', 'HDI (0-1)', 'Debt (USD)', 'C02 Emissions (Kiloton C02))', 
+'Trade Balance (Million USD)', 'Life Expectancy (Years)', 'Elevation (Meters)', 'Military Expenditure (Billions USD)', 'Average Wage (USD)', 
+'National Anthem Length (Minutes:Seconds)', 'Penis Size (Inches)', 'Population Density (People/km^2)', 'Hard Mode' 
 ]
 countryDict = {
     'Afghanistan': ['Afghanistan', 34262840, 652864, 14939, 0.478, 1.28e9, 5675.8, -4770, 61.98, 7492, 'NO', 'NO', 'NO', 13.69],

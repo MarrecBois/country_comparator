@@ -66,6 +66,27 @@ def gameon():
                 gameMode = gameModeList[int(session['GameModeIndex'])]
                 country1Info = countryDict[country1][int(session['GameModeIndex'])]
                 country2Info = countryDict[country2][int(session['GameModeIndex'])]
+
+                if session['Anthem']:
+                    country1Info = str(country1Info)[0] + ':' + str(country1Info)[1:]
+                    country2Info = str(country2Info)[0] + ':' + str(country2Info)[1:]
+                
+                elif session['Debt']:
+                    country1Info = round(country1Info)
+                    country2Info = round(country2Info)
+                    newc1Info = str(country1Info)[-3:]
+                    newc2Info = str(country2Info)[-3:]
+
+                    for pos in range(1, len(str(country1Info))//3):
+                        newc1Info = str(country1Info)[len(country1Info - 3*pos):len(country1Info - 3*pos) + 3] + ',' + newc1Info
+                    
+                    for pos in range(1, len(str(country2Info))//3):
+                        newc2Info = str(country2Info)[len(country2Info - 3*pos):len(country2Info - 3*pos) + 3] + ',' + newc2Info
+                    
+                    country1Info = newc1Info
+                    country2Info = newc2Info
+
+
                 return render_template('gameon.html', score = session['score'], country1 = country1, country2 = country2, gameMode = gameMode, country1Info=country1Info,country2Info=country2Info)
         else:
             country1Data = countryDict[session['country1']][int(session['GameModeIndex'])]
@@ -94,10 +115,32 @@ def gameon():
                 gameMode = gameModeList[int(session['GameModeIndex'])]
                 country1Info = countryDict[country1][int(session['GameModeIndex'])]
                 country2Info = countryDict[country2][int(session['GameModeIndex'])]
+
+                if session['Anthem']:
+                    country1Info = str(country1Info)[0] + ':' + str(country1Info)[1:]
+                    country2Info = str(country2Info)[0] + ':' + str(country2Info)[1:]
+                
+                elif session['Debt']:
+                    country1Info = round(country1Info)
+                    country2Info = round(country2Info)
+                    newc1Info = str(country1Info)[-3:]
+                    newc2Info = str(country2Info)[-3:]
+
+                    for pos in range(1, len(str(country1Info))//3):
+                        newc1Info = str(country1Info)[len(country1Info - 3*pos):len(country1Info - 3*pos) + 3] + ',' + newc1Info
+                    
+                    for pos in range(1, len(str(country2Info))//3):
+                        newc2Info = str(country2Info)[len(country2Info - 3*pos):len(country2Info - 3*pos) + 3] + ',' + newc2Info
+                    
+                    country1Info = newc1Info
+                    country2Info = newc2Info
+
                 return render_template('gameon.html', score = session['score'], country1 = country1, country2 = country2, gameMode = gameMode, country1Info=country1Info,country2Info=country2Info)
     else: 
 
         session['hardMode'] = False
+        session['Anthem'] = False
+        session['Debt'] = False
         gameMode = gameModeList[int(session['GameModeIndex'])]
         
         if gameMode == 'Hard Mode':
@@ -105,7 +148,13 @@ def gameon():
             randomIndex = rn.randint(1, 14)
             session['GameModeIndex'] = randomIndex = rn.randint(1, 14)
             gameMode = gameModeList[int(session['GameModeIndex'])]
-            
+        
+        elif gameMode == 'National Anthem Length (Minutes:Seconds)':
+            session['Anthem'] = True
+
+        elif gameMode == 'Debt (USD)':
+            session['Debt'] = True
+
         session['score'] = 0
         rand1 = rn.randint(0, len(countryList)-1)
         rand2 = rn.randint(0, len(countryList)-1)
@@ -130,7 +179,26 @@ def gameon():
             session['country2'] = country2
             country1Info = countryDict[country1][int(session['GameModeIndex'])]
             country2Info = countryDict[country2][int(session['GameModeIndex'])]
-        
+
+        if session['Anthem']:
+            country1Info = str(country1Info)[0] + ':' + str(country1Info)[1:]
+            country2Info = str(country2Info)[0] + ':' + str(country2Info)[1:]
+
+        elif session['Debt']:
+            country1Info = round(country1Info)
+            country2Info = round(country2Info)
+            newc1Info = str(country1Info)[-3:]
+            newc2Info = str(country2Info)[-3:]
+
+            for pos in range(1, len(str(country1Info))//3):
+                newc1Info = str(country1Info)[len(country1Info - 3*pos):len(country1Info - 3*pos) + 3] + ',' + newc1Info
+            
+            for pos in range(1, len(str(country2Info))//3):
+                newc2Info = str(country2Info)[len(country2Info - 3*pos):len(country2Info - 3*pos) + 3] + ',' + newc2Info
+            
+            country1Info = newc1Info
+            country2Info = newc2Info
+
         return render_template('gameon.html', score = 0, country1 = country1, country2 = country2, gameMode = gameMode, country1Info=country1Info, country2Info=country2Info) 
 
 @app.route('/gameover', methods=['POST', 'GET'])
