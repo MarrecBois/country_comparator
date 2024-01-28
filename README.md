@@ -14,3 +14,7 @@ In the coding process, we used a mixture of html, css, and python with flask.
 
 Main Logic is done using python and flask, in the app.py file.
 Information is stored within the countriesDict.py file.
+Website templates in templates folder.
+Style is taken from static/css folder.
+Flask session contains session info.
+
