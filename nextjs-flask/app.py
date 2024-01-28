@@ -4,10 +4,12 @@ from flask import Flask, flash, redirect, render_template, request, session
 from flask_session import Session
 from tempfile import mkdtemp
 from werkzeug.security import check_password_hash, generate_password_hash
-
+import countriesDict.py
 from datetime import datetime
+import random as rn
 
-
+for key in countryDict:
+    print(key, countryDict[key])
 
 app = Flask(__name__)
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
