@@ -14,7 +14,7 @@ Order for dictionary indices:
     11 --> Average Wage
 '''
 gameModeList = [
-'Name', 'Population (# of People)', 'Land Mass (Square Kilometers)', 'GDP (Millions USD)', 'HDI (0-1)', 'Debt (USD)', 'C02 Emissions (Kiloton C02))', 'Trade Balance (Million USD)', 'Life Expectancy (Years)', 'Elevation (Meters)', 'Military Experience (Billions USD)', 'Average Wage (USD)', 'National Anthem (Minutes:Seconds)', 'Penis Size (Inches)', 'Population Density (People/km^2)', 'Hard Mode' 
+'Name', 'Population (# of People)', 'Land Mass (Square Kilometers)', 'GDP (Millions USD)', 'HDI (0-1)', 'Debt (USD)', 'C02 Emissions (Kiloton C02))', 'Trade Balance (Million USD)', 'Life Expectancy (Years)', 'Elevation (Meters)', 'Military Expenditure (Billions USD)', 'Average Wage (USD)', 'National Anthem (Minutes:Seconds)', 'Penis Size (Inches)', 'Population Density (People/km^2)', 'Hard Mode' 
 ]
 countryDict = {
     'Afghanistan': ['Afghanistan', 34262840, 652864, 14939, 0.478, 1.28e9, 5675.8, -4770, 61.98, 7492, 'NO', 'NO', 'NO', 13.69],
@@ -159,7 +159,6 @@ countryDict = {
     'Poland': ['Poland', 37667000, 312685, 679442, 0.876, 385e9, 321954, -20645, 75.60, 2500, 16.6, 37325, 43, 14.29],
     'Portugal': ['Portugal', 10467366, 92225, 253663, 0.866, 440e9, 41281, -32575, 81.07, 2351, 'NO', 31300, 119, 'NO'],
     'Qatar': ['Qatar', 2656032, 11586, 179571, 0.855, 195e9, 102618, 97485, 79.27, 103, 15.4, 'NO', 127, 'NO'],
-    'Republic of the Congo': ['Republic of the Congo', 6142180, 342000, , 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO', 'NO'],
     'Romania': ['Romania', 19051562, 238398, 284086, 0.820, 158e9, 77289, -35783, 72.96, 2544, 5.2, 'NO', 219, 12.73],
     'Russia': ['Russia', 146424729, 17098246, 1778782, 0.822, 282e9, 1909039, 307975, 69.36, 5642, 86.4, 'NO', 122, 13.21],
     'Rwanda': ['Rwanda', 13246384, 26338, 11070, 0.534, 2.44e9, 1626, -1457, 66.07, 4507, 'NO', 'NO', 219, 'NO'],

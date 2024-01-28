@@ -45,19 +45,24 @@ def gameon():
             if country1Data < country2Data:
                 return redirect('/gameover')
             else:
+
+                if session['hardMode']:
+                   session['GameModeIndex'] = randomIndex = rn.randint(1, 14)
+
                 country1 = session['country2']
                 rand2 = rn.randint(0, len(countryList)-1)
                 country2 = countryList[rand2]
                 while (country2 == country1) or (countryDict[country2][int(session['GameModeIndex'])]) == 'NO':
                     rand2 = rn.randint(0, len(countryList)-1)
                     country2 = countryList[rand2]
+                
+                while (countryDict[country1][int(session['GameModeIndex'])]) == 'NO': # This code will only be applicable for hard mode
+                    rand1 = rn.randint(0, len(countryList)-1)
+                    country1 = countryList[rand1]
+                    
                 session['country1'] = country1
                 session['country2'] = country2
                 session['score'] += 1
-                
-                if hardMode:
-                   session['GameModeIndex'] = randomIndex = rn.randint(1, 14)
-
                 gameMode = gameModeList[int(session['GameModeIndex'])]
                 country1Info = countryDict[country1][int(session['GameModeIndex'])]
                 country2Info = countryDict[country2][int(session['GameModeIndex'])]
@@ -68,12 +73,21 @@ def gameon():
             if country1Data > country2Data:
                 return redirect('/gameover')
             else:
+
+                if session['hardMode']:
+                   session['GameModeIndex'] = randomIndex = rn.randint(1, 14)
+
                 country1 = session['country2']
                 rand2 = rn.randint(0, len(countryList)-1)
                 country2 = countryList[rand2]
                 while (country2 == country1) or (countryDict[country2][int(session['GameModeIndex'])]) == 'NO':
                     rand2 = rn.randint(0, len(countryList)-1)
                     country2 = countryList[rand2]
+
+                while (countryDict[country1][int(session['GameModeIndex'])]) == 'NO': # This code will only be applicable for hard mode
+                    rand1 = rn.randint(0, len(countryList)-1)
+                    country1 = countryList[rand1]
+
                 session['country1'] = country1
                 session['country2'] = country2
                 session['score'] += 1
@@ -82,10 +96,14 @@ def gameon():
                 country2Info = countryDict[country2][int(session['GameModeIndex'])]
                 return render_template('gameon.html', score = session['score'], country1 = country1, country2 = country2, gameMode = gameMode, country1Info=country1Info,country2Info=country2Info)
     else: 
+
+        session['hardMode'] = False
         gameMode = gameModeList[int(session['GameModeIndex'])]
+        
         if gameMode == 'Hard Mode':
-            hardMode = True
+            session['hardMode'] = True
             randomIndex = rn.randint(1, 14)
+            session['GameModeIndex'] = randomIndex = rn.randint(1, 14)
             gameMode = gameModeList[int(session['GameModeIndex'])]
             
         session['score'] = 0
