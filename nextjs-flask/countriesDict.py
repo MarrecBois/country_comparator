@@ -19,6 +19,11 @@ gameModeList = [
 'Trade Balance (Million USD)', 'Life Expectancy (Years)', 'Elevation (Meters)', 'Military Expenditure (Billions USD)', 'Average Wage (USD)', 
 'National Anthem Length (Minutes:Seconds)', 'Penis Size (Inches)', 'Population Density (People/km^2)', 'Hard Mode' 
 ]
+
+endGameMessage = [
+    'You know the average jellyfish will score higher than you just did'
+]
+
 countryDict = {
     'Afghanistan': ['Afghanistan', 34262840, 652864, 14939, 0.478, 1.28e9, 5675.8, -4770, 61.98, 7492, 'NO', 'NO', 'NO', 13.69],
     'Albania': ['Albania', 2761785, 28748, 18260, 0.796, 1.4e9, 4486.2, -4089, 76.46, 2764, 'NO', 'NO', 106, 14.19],
