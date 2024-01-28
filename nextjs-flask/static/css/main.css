@@ -94,3 +94,11 @@
   font-weight: bold;
   text-align: center;
 }
+
+.info {
+  font-size: 24px;
+}
+
+.label {
+  font-size: 48px;
+}
