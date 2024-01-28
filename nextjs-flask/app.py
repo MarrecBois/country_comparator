@@ -285,7 +285,10 @@ def gameon():
 def gameover():
     if request.method == 'POST':
         return redirect('/gameon')
-    message=endGameMessage[session['score']]
+    if session['score'] > len(endGameMessage)-1:
+        message = 'Great job...nerd'
+    else:
+        message=endGameMessage[session['score']]
     return render_template('gameover.html', message=message, score=session['score'])
 
 @app.route('/tutorial', methods=['GET'])
