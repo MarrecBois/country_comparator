@@ -40,8 +40,43 @@ def index():
 def gameon():
     if request.method == 'POST':
         if request.form.get("Guess") == "Lower":
-            session['score'] += 1
-        return render_template('gameon.html', score = session['score'])
+            country1Data = countryDict[session['country1']][int(session['GameModeIndex'])]
+            country2Data = countryDict[session['country2']][int(session['GameModeIndex'])]
+            if country1Data < country2Data:
+                return redirect('/gameover')
+            else:
+                country1 = session['country2']
+                rand2 = rn.randint(0, len(countryList)-1)
+                country2 = countryList[rand2]
+                while (country2 == country1) or (countryDict[country2][int(session['GameModeIndex'])]) == 'NO':
+                    rand2 = rn.randint(0, len(countryList)-1)
+                    country2 = countryList[rand2]
+                session['country1'] = country1
+                session['country2'] = country2
+                session['score'] += 1
+                gameMode = gameModeList[int(session['GameModeIndex'])]
+                country1Info = countryDict[country1][int(session['GameModeIndex'])]
+                country2Info = countryDict[country2][int(session['GameModeIndex'])]
+                return render_template('gameon.html', score = session['score'], country1 = country1, country2 = country2, gameMode = gameMode, country1Info=country1Info,country2Info=country2Info)
+        else:
+            country1Data = countryDict[session['country1']][int(session['GameModeIndex'])]
+            country2Data = countryDict[session['country2']][int(session['GameModeIndex'])]
+            if country1Data > country2Data:
+                return redirect('/gameover')
+            else:
+                country1 = session['country2']
+                rand2 = rn.randint(0, len(countryList)-1)
+                country2 = countryList[rand2]
+                while (country2 == country1) or (countryDict[country2][int(session['GameModeIndex'])]) == 'NO':
+                    rand2 = rn.randint(0, len(countryList)-1)
+                    country2 = countryList[rand2]
+                session['country1'] = country1
+                session['country2'] = country2
+                session['score'] += 1
+                gameMode = gameModeList[int(session['GameModeIndex'])]
+                country1Info = countryDict[country1][int(session['GameModeIndex'])]
+                country2Info = countryDict[country2][int(session['GameModeIndex'])]
+                return render_template('gameon.html', score = session['score'], country1 = country1, country2 = country2, gameMode = gameMode, country1Info=country1Info,country2Info=country2Info)
     else: 
         gameMode = gameModeList[int(session['GameModeIndex'])]
         session['score'] = 0
@@ -50,11 +85,26 @@ def gameon():
         while rand1 == rand2:
             rand2 = rn.randint(0, len(countryDict))
         country1 = countryList[rand1]
-        country2 = countryList[rand2]
+        country2 = countryList[rand2] 
         session['country1'] = country1
         session['country2'] = country2
         country1Info = countryDict[country1][int(session['GameModeIndex'])]
-        return render_template('gameon.html', score = 0, country1 = country1, country2 = country2, gameMode = gameMode, country1Info=country1Info) 
+        country2Info = countryDict[country2][int(session['GameModeIndex'])]
+        
+        while (country1Info == 'NO' or country2Info == 'NO'):
+            
+            rand1 = rn.randint(0, len(countryList)-1)
+            rand2 = rn.randint(0, len(countryList)-1)
+            while rand1 == rand2:
+                rand2 = rn.randint(0, len(countryDict))
+            country1 = countryList[rand1]
+            country2 = countryList[rand2] 
+            session['country1'] = country1
+            session['country2'] = country2
+            country1Info = countryDict[country1][int(session['GameModeIndex'])]
+            country2Info = countryDict[country2][int(session['GameModeIndex'])]
+        
+        return render_template('gameon.html', score = 0, country1 = country1, country2 = country2, gameMode = gameMode, country1Info=country1Info, country2Info=country2Info) 
 
 @app.route('/gameover', methods=['POST', 'GET'])
 def gameover():
