@@ -51,6 +51,9 @@ def gameon():
                 if session['hardMode']:
                    session['GameModeIndex'] = randomIndex = rn.randint(1, 14)
 
+                    while randomIndex == 12:
+                        session['GameModeIndex'] = randomIndex = rn.randint(1, 14)
+
                 country1 = session['country2']
                 rand2 = rn.randint(0, len(countryList)-1)
                 country2 = countryList[rand2]
